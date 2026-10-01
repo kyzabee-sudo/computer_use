@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "computer-use"
+version = "0.1.0"
+description = "Opt-in Windows desktop control for an always-on agent."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pywinauto>=0.6.8; sys_platform == 'win32'",
+  "mss>=9.0; sys_platform == 'win32'",
+  "Pillow>=10; sys_platform == 'win32'",
+]
+
+[project.scripts]
+computer-use = "computer_use.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
